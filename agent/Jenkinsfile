@@ -1,3 +1,16 @@
-pipeline{
-    
+pipeline{ 
+    agent any
+
+    stages{
+        stage('Build'){
+            step{
+                sh 'sleep 5'
+            }
+        }
+        stage('Test'){
+            step{
+                sh 'sleep 5'
+            }
+        }
+    } 
 }
