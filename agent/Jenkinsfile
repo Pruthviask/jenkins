@@ -2,6 +2,11 @@ pipeline{
     agent any
 
     stages{
+        stage('Checkout'){
+            steps{
+                sh 'sleep 5'
+            }
+        }
         stage('Build'){
             steps{
                 sh 'sleep 5'
@@ -9,7 +14,17 @@ pipeline{
         }
         stage('Test'){
             steps{
-                sh 'sleep 5'
+                sh '''
+                #!/bin/bash
+                ls -lrt
+                pwd
+                sleep 5
+                '''
+            }
+        }
+        stage('Deploy'){
+            steps{
+                sh 'sleep 10'
             }
         }
     } 
